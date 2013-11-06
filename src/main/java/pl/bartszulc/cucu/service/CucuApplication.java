@@ -10,7 +10,7 @@ import com.yammer.dropwizard.migrations.MigrationsBundle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.bartszulc.cucu.api.user.LoginUserResponse;
-import pl.bartszulc.cucu.auth.CucuAuthenticator;
+import pl.bartszulc.cucu.service.auth.CucuAuthenticator;
 import pl.bartszulc.cucu.service.core.user.User;
 import pl.bartszulc.cucu.service.domain.user.UsersService;
 import pl.bartszulc.cucu.service.jdbi.user.UserDAO;

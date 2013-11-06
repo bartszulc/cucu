@@ -1,4 +1,4 @@
-package pl.bartszulc.cucu.helpers.translator;
+package pl.bartszulc.cucu.service.helpers.translator;
 
 import pl.bartszulc.cucu.api.user.RegisterUserRequest;
 import pl.bartszulc.cucu.api.user.RegisterUserResponse;

@@ -1,4 +1,4 @@
-package pl.bartszulc.cucu.auth;
+package pl.bartszulc.cucu.service.auth;
 
 import com.google.common.base.Optional;
 import com.yammer.dropwizard.auth.AuthenticationException;

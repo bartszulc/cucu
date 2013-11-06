@@ -9,9 +9,9 @@ import pl.bartszulc.cucu.api.user.LoginUserRequest;
 import pl.bartszulc.cucu.api.user.LoginUserResponse;
 import pl.bartszulc.cucu.api.user.RegisterUserRequest;
 import pl.bartszulc.cucu.api.user.RegisterUserResponse;
-import pl.bartszulc.cucu.auth.CucuAuthenticator;
-import pl.bartszulc.cucu.helpers.translator.LoginUserTranslator;
-import pl.bartszulc.cucu.helpers.translator.RegisterUserTranslator;
+import pl.bartszulc.cucu.service.auth.CucuAuthenticator;
+import pl.bartszulc.cucu.service.helpers.translator.LoginUserTranslator;
+import pl.bartszulc.cucu.service.helpers.translator.RegisterUserTranslator;
 import pl.bartszulc.cucu.service.core.user.User;
 import pl.bartszulc.cucu.service.domain.user.UsersService;
 
