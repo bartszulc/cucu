@@ -5,11 +5,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * Created with IntelliJ IDEA.
  * User: bart
  * Date: 11/6/13
  * Time: 6:36 PM
- * To change this template use File | Settings | File Templates.
  */
 public class LoginUserRequest {
     @NotNull
@@ -42,10 +40,8 @@ public class LoginUserRequest {
 
         LoginUserRequest that = (LoginUserRequest) o;
 
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
-        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+        return !(password != null ? !password.equals(that.password) : that.password != null) && !(username != null ? !username.equals(that.username) : that.username != null);
 
-        return true;
     }
 
     @Override

@@ -5,11 +5,9 @@ import pl.bartszulc.cucu.api.user.RegisterUserResponse;
 import pl.bartszulc.cucu.service.core.user.User;
 
 /**
- * Created with IntelliJ IDEA.
  * User: bart
  * Date: 11/6/13
  * Time: 6:14 PM
- * To change this template use File | Settings | File Templates.
  */
 public class RegisterUserTranslator {
     public static User to(RegisterUserRequest registerUserRequest) {

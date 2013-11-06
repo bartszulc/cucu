@@ -17,11 +17,9 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
  * User: bart
  * Date: 11/6/13
  * Time: 4:39 PM
- * To change this template use File | Settings | File Templates.
  */
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)

@@ -23,11 +23,9 @@ import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 /**
- * Created with IntelliJ IDEA.
  * User: bart
  * Date: 11/6/13
  * Time: 8:06 PM
- * To change this template use File | Settings | File Templates.
  */
 public class UsersResourceTest extends ResourceTest {
     private final User user = new User();

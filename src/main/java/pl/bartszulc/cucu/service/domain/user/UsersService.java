@@ -15,11 +15,9 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
  * User: bart
  * Date: 11/6/13
  * Time: 5:21 PM
- * To change this template use File | Settings | File Templates.
  */
 public class UsersService {
     private final UserDAO userDAO;

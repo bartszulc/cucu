@@ -5,11 +5,9 @@ import pl.bartszulc.cucu.api.user.LoginUserResponse;
 import pl.bartszulc.cucu.service.core.user.User;
 
 /**
- * Created with IntelliJ IDEA.
  * User: bart
  * Date: 11/6/13
  * Time: 6:44 PM
- * To change this template use File | Settings | File Templates.
  */
 public class LoginUserTranslator {
     public static User to(LoginUserRequest loginUserRequest) {

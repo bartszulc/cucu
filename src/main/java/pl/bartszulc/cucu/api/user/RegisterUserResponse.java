@@ -1,11 +1,9 @@
 package pl.bartszulc.cucu.api.user;
 
 /**
- * Created with IntelliJ IDEA.
  * User: bart
  * Date: 11/6/13
  * Time: 5:16 PM
- * To change this template use File | Settings | File Templates.
  */
 public class RegisterUserResponse {
     private Long id;
@@ -43,11 +41,8 @@ public class RegisterUserResponse {
 
         RegisterUserResponse that = (RegisterUserResponse) o;
 
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+        return !(email != null ? !email.equals(that.email) : that.email != null) && !(id != null ? !id.equals(that.id) : that.id != null) && !(username != null ? !username.equals(that.username) : that.username != null);
 
-        return true;
     }
 
     @Override
