@@ -4,7 +4,6 @@ import com.yammer.dropwizard.auth.Auth;
 import com.yammer.dropwizard.hibernate.UnitOfWork;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.bartszulc.cucu.api.user.LoginUserRequest;
 import pl.bartszulc.cucu.api.user.LoginUserResponse;
 import pl.bartszulc.cucu.api.user.RegisterUserRequest;
 import pl.bartszulc.cucu.api.user.RegisterUserResponse;
@@ -52,7 +51,8 @@ public class UsersResource {
     @GET
     @Path("login")
     @UnitOfWork
-    public void login(@Auth LoginUserResponse loginUserResponse) {
+    public LoginUserResponse login(@Auth LoginUserResponse loginUserResponse) {
         LOGGER.debug("successful login attempt: " + loginUserResponse);
+        return loginUserResponse;
     }
 }

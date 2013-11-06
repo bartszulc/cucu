@@ -45,4 +45,26 @@ public class RegisterUserRequest {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        RegisterUserRequest that = (RegisterUserRequest) o;
+
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = username != null ? username.hashCode() : 0;
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
+    }
 }
