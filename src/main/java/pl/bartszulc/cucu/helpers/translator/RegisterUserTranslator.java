@@ -1,4 +1,4 @@
-package pl.bartszulc.cucu.helper.translator;
+package pl.bartszulc.cucu.helpers.translator;
 
 import pl.bartszulc.cucu.api.user.RegisterUserRequest;
 import pl.bartszulc.cucu.api.user.RegisterUserResponse;
@@ -11,8 +11,8 @@ import pl.bartszulc.cucu.service.core.user.User;
  * Time: 6:14 PM
  * To change this template use File | Settings | File Templates.
  */
-public final class RegisterUserTranslator {
-    public static final User to(RegisterUserRequest registerUserRequest) {
+public class RegisterUserTranslator {
+    public static User to(RegisterUserRequest registerUserRequest) {
         final User registerUser = new User();
         registerUser.setEmail(registerUserRequest.getEmail());
         registerUser.setPassword(registerUserRequest.getPassword());
@@ -20,7 +20,7 @@ public final class RegisterUserTranslator {
         return registerUser;
     }
 
-    public static final RegisterUserResponse from(User registeredUser) {
+    public static RegisterUserResponse from(User registeredUser) {
         final RegisterUserResponse registerUserResponse = new RegisterUserResponse();
         registerUserResponse.setEmail(registeredUser.getEmail());
         registerUserResponse.setUsername(registeredUser.getUsername());
