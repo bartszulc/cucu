@@ -1,0 +1,1 @@
+var cucuModule = angular.module('cucu', []);

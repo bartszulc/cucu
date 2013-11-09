@@ -1,0 +1,7 @@
+<div ng-hide="user.authorized">
+    <form name="loginUserForm" ng-submit="login()">
+        <input placeholder="username" ng-model="user.username" required/>
+        <input placeholder="password" type="password" ng-model="user.password" requiredd/>
+        <button type="submit" ng-disabled="!loginUserForm.$valid">login</button>
+    </form>
+</div>

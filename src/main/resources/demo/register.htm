@@ -1,0 +1,10 @@
+<div ng-hide="user.authorized">
+    <form name="registerUserForm" ng-submit="register()">
+        <input placeholder="username" ng-model="user.username" required/>
+        <input placeholder="password" type="password" ng-model="user.password" required/>
+        <input placeholder="password" type="password" type="repeaet password" ng-model="user.repeatedPassword"
+               required/>
+        <input placeholder="email" type="email" ng-model="user.email" required/>
+        <button type="submit" ng-disabled="!registerUserForm.$valid">register</button>
+    </form>
+</div>

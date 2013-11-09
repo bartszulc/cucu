@@ -1,14 +1,8 @@
-# database settings
 database:
+    driverClass: org.h2.Driver
+    user: sa
+    password: sa
+    url: jdbc:h2:cucu
 
-  # the name of your JDBC driver
-  driverClass: org.h2.Driver
-
-  # the username
-  user: sa
-
-  # the password
-  password: sa
-
-  # the JDBC URL
-  url: jdbc:h2:cucu
+http:
+    rootPath: /service/*

@@ -1,6 +1,7 @@
 package pl.bartszulc.cucu.service;
 
 import com.yammer.dropwizard.Service;
+import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.auth.basic.BasicAuthProvider;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
@@ -55,6 +56,7 @@ public class CucuApplication extends Service<CucuConfiguration> {
         cucuConfigurationBootstrap.setName(CUCU_SERVICE);
         cucuConfigurationBootstrap.addBundle(migrationBundle);
         cucuConfigurationBootstrap.addBundle(hibernateBundle);
+        cucuConfigurationBootstrap.addBundle(new AssetsBundle("/assets/", "/"));
     }
 
     @Override

@@ -1,0 +1,36 @@
+<html ng-app="cucu">
+<head>
+    <script src="js/angular.min.js"></script>
+    <script src="js/modules.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/configs.js"></script>
+</head>
+<body ng-controller="mainController">
+<header>
+    <h1>cucu</h1>
+
+    <div ng-show="user.authorized" ng-controller="loggedUserController">
+        <tr>
+            <td>
+                Welcome {{user.username}}
+            </td>
+            <td>
+                <button ng-click="logout()">logout</button>
+            </td>
+        </tr>
+    </div>
+    <div ng-hide="user.authorized">
+        <tr>
+            <a href="#login">login</a>
+            <a href="#register">register</a>
+        </tr>
+        <tr>
+            <div ng-view/>
+        </tr>
+    </div>
+
+    <content/>
+    <footer/>
+</body>
+</html>

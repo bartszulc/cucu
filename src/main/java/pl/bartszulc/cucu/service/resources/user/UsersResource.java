@@ -9,6 +9,7 @@ import pl.bartszulc.cucu.api.user.RegisterUserRequest;
 import pl.bartszulc.cucu.api.user.RegisterUserResponse;
 import pl.bartszulc.cucu.service.domain.user.UsersService;
 
+import javax.validation.Valid;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -34,7 +35,7 @@ public class UsersResource {
 
     @POST
     @UnitOfWork
-    public RegisterUserResponse register(RegisterUserRequest registerUserRequest) {
+    public RegisterUserResponse register(@Valid RegisterUserRequest registerUserRequest) {
         LOGGER.debug("incoming register user request: " + registerUserRequest.toString());
         return usersService.register(registerUserRequest);
     }
