@@ -3,9 +3,9 @@ package pl.bartszulc.cucu.api.user;
 /**
  * User: bart
  * Date: 11/6/13
- * Time: 5:16 PM
+ * Time: 6:41 PM
  */
-public class RegisterUserResponse {
+public class UserResponse {
     private Long id;
     private String username;
     private String email;
@@ -39,7 +39,7 @@ public class RegisterUserResponse {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        RegisterUserResponse that = (RegisterUserResponse) o;
+        UserResponse that = (UserResponse) o;
 
         return !(email != null ? !email.equals(that.email) : that.email != null) && !(id != null ? !id.equals(that.id) : that.id != null) && !(username != null ? !username.equals(that.username) : that.username != null);
 

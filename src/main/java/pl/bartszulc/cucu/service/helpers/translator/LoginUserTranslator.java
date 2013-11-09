@@ -1,7 +1,6 @@
 package pl.bartszulc.cucu.service.helpers.translator;
 
 import pl.bartszulc.cucu.api.user.LoginUserRequest;
-import pl.bartszulc.cucu.api.user.LoginUserResponse;
 import pl.bartszulc.cucu.service.core.user.User;
 
 /**
@@ -15,13 +14,5 @@ public class LoginUserTranslator {
         loginUser.setPassword(loginUserRequest.getPassword());
         loginUser.setUsername(loginUserRequest.getUsername());
         return loginUser;
-    }
-
-    public static LoginUserResponse from(User loginUser) {
-        final LoginUserResponse loginUserResponse = new LoginUserResponse();
-        loginUserResponse.setEmail(loginUser.getEmail());
-        loginUserResponse.setUsername(loginUser.getUsername());
-        loginUserResponse.setId(loginUser.getId());
-        return loginUserResponse;
     }
 }

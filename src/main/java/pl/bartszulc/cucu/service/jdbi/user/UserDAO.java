@@ -34,7 +34,23 @@ public class UserDAO extends AbstractDAO<User> {
 
     public User find(String username, String password) {
         LOGGER.debug("finding registered user: " + username + "/" + password);
-        return uniqueResult(namedQuery("pl.bartszulc.cucu.service.core.user.User.find").setParameter("username", username).setParameter("password", password));
+        return uniqueResult(namedQuery("pl.bartszulc.cucu.service.core.user.User.findByCredentials").setParameter("username", username).setParameter("password", password));
+    }
 
+    public User find(long id) {
+        LOGGER.debug("finding registered user: " + id);
+        return uniqueResult(namedQuery("pl.bartszulc.cucu.service.core.user.User.findById").setParameter("id", id));
+    }
+
+    public User update(User user) {
+        LOGGER.debug("updating user: " + user);
+        final User updated = persist(user);
+        return updated;
+    }
+
+    public void delete(User user) {
+        LOGGER.debug("deleting user: " + user);
+        currentSession().delete(user);
+        currentSession().flush();
     }
 }

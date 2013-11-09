@@ -17,8 +17,12 @@ import javax.persistence.*;
                 query = "SELECT u FROM User u"
         ),
         @NamedQuery(
-                name = "pl.bartszulc.cucu.service.core.user.User.find",
+                name = "pl.bartszulc.cucu.service.core.user.User.findByCredentials",
                 query = "SELECT u FROM User u WHERE u.username LIKE :username AND u.password LIKE :password"
+        ),
+        @NamedQuery(
+                name = "pl.bartszulc.cucu.service.core.user.User.findById",
+                query = "SELECT u FROM User u WHERE u.id LIKE :id"
         )
 })
 public class User {

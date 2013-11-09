@@ -10,12 +10,12 @@ import com.yammer.dropwizard.hibernate.HibernateBundle;
 import com.yammer.dropwizard.migrations.MigrationsBundle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.bartszulc.cucu.api.user.LoginUserResponse;
+import pl.bartszulc.cucu.api.user.UserResponse;
 import pl.bartszulc.cucu.service.auth.CucuAuthenticator;
 import pl.bartszulc.cucu.service.core.user.User;
-import pl.bartszulc.cucu.service.domain.user.UsersService;
+import pl.bartszulc.cucu.service.domain.user.UserService;
 import pl.bartszulc.cucu.service.jdbi.user.UserDAO;
-import pl.bartszulc.cucu.service.resources.user.UsersResource;
+import pl.bartszulc.cucu.service.resources.user.UserResource;
 
 /**
  * Created with IntelliJ IDEA.
@@ -63,8 +63,8 @@ public class CucuApplication extends Service<CucuConfiguration> {
     public void run(CucuConfiguration cucuConfiguration, Environment environment) throws Exception {
         LOGGER.debug("Running the service...");
         final UserDAO userDAO = new UserDAO(hibernateBundle.getSessionFactory());
-        final UsersService usersService = new UsersService(userDAO);
-        environment.addResource(new UsersResource(usersService));
-        environment.addProvider(new BasicAuthProvider<LoginUserResponse>(new CucuAuthenticator(usersService), CUCU_SERVICE));
+        final UserService userService = new UserService(userDAO);
+        environment.addResource(new UserResource(userService));
+        environment.addProvider(new BasicAuthProvider<UserResponse>(new CucuAuthenticator(userService), CUCU_SERVICE));
     }
 }

@@ -5,8 +5,8 @@ import com.yammer.dropwizard.auth.AuthenticationException;
 import com.yammer.dropwizard.auth.Authenticator;
 import com.yammer.dropwizard.auth.basic.BasicCredentials;
 import pl.bartszulc.cucu.api.user.LoginUserRequest;
-import pl.bartszulc.cucu.api.user.LoginUserResponse;
-import pl.bartszulc.cucu.service.domain.user.UsersService;
+import pl.bartszulc.cucu.api.user.UserResponse;
+import pl.bartszulc.cucu.service.domain.user.UserService;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,21 +15,21 @@ import pl.bartszulc.cucu.service.domain.user.UsersService;
  * Time: 6:51 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CucuAuthenticator implements Authenticator<BasicCredentials, LoginUserResponse> {
-    private final UsersService usersService;
+public class CucuAuthenticator implements Authenticator<BasicCredentials, UserResponse> {
+    private final UserService userService;
 
-    public CucuAuthenticator(UsersService usersService) {
-        this.usersService = usersService;
+    public CucuAuthenticator(UserService userService) {
+        this.userService = userService;
     }
 
     @Override
-    public Optional<LoginUserResponse> authenticate(BasicCredentials basicCredentials) throws AuthenticationException {
+    public Optional<UserResponse> authenticate(BasicCredentials basicCredentials) throws AuthenticationException {
         final LoginUserRequest loginUserRequest = new LoginUserRequest();
         loginUserRequest.setUsername(basicCredentials.getUsername());
         loginUserRequest.setPassword(basicCredentials.getPassword());
-        final LoginUserResponse loginUserResponse = usersService.login(loginUserRequest);
-        if (loginUserResponse != null) {
-            return Optional.of(loginUserResponse);
+        final UserResponse userResponse = userService.login(loginUserRequest);
+        if (userResponse != null) {
+            return Optional.of(userResponse);
         }
         return Optional.absent();
     }
